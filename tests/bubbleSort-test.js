@@ -21,24 +21,22 @@ const generateRandomNumber = () => {
 	});
 
   it('should sort an array of letters', () => {
-		bubbleSort(letterArray)
 		assert.deepEqual(bubbleSort(letterArray), ["a", "b", "c", "d"])
 	});
 
   it('should sort an array of numbers', () => {
-		bubbleSort(numberArray)
     assert.deepEqual(bubbleSort(numberArray), numberArray.sort())
 	});
 
   it('should sort positive and negative integers', () => {
-    bubbleSort(positiveNegative)
     assert.deepEqual(bubbleSort(positiveNegative), [-7, -2, 3, 5, 8, 9, 10])
   });
 
   it('should sort a large random array of numbers', () => {
-    bubbleSort(testArray)
+    var mySorted = bubbleSort(testArray);
+    var browserSorted = testArray.sort();
 
-    assert.deepEqual(bubbleSort(testArray), testArray.sort())
+    assert.deepEqual(mySorted, browserSorted)
   })
 
 
