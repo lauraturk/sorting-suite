@@ -1,21 +1,13 @@
 import {assert} from 'chai';
-import insertionSort from '../scripts/insertionSort.js'
-require('locus')
+import {insertionSort} from '../scripts/insertionSort.js'
+import {generateRandomNumber} from './randomNumber-gen.js'
+import {generateRandomLetter} from './randomLetter-gen.js'
+
 
 describe('insertion sort', () => {
 
-
-
-  var testArray = []
-
-  const generateRandomNumber = () => {
-    return Math.floor(Math.random() * 100 + 1)
-  }
-
-    for (let i = 0; i < 100; i++) {
-      testArray.push(generateRandomNumber())
-    }
-
+  const compareNumbers = (a, b) =>
+    a - b
 
   it('should be a function', () => {
     assert.isFunction(insertionSort)
@@ -43,9 +35,24 @@ describe('insertion sort', () => {
   })
 
   it('should sort a large random array of numbers', () => {
-    var sorted = insertionSort(testArray)
+    var testArray = generateRandomNumber(1, 100, 350000);
+    var browserSorted = testArray.sort(compareNumbers);
 
-    assert.deepEqual(sorted, testArray.sort())
+    assert.deepEqual(insertionSort(testArray), browserSorted);
+  })
+
+  it('should sort a large random of positive and Negative integers', () => {
+    var testArray2 = generateRandomNumber(-90, 100, 350000);
+    var browserSorted2 = testArray2.sort(compareNumbers);
+
+    assert.deepEqual(insertionSort(testArray2), browserSorted2);
+  })
+
+  it('should sort a large random array of letters', () => {
+    var testLetters = generateRandomLetter(2000);
+    var letterBrowserSorted = testLetters.sort();
+
+    assert.deepEqual(insertionSort(testLetters), letterBrowserSorted);
   })
 
 })

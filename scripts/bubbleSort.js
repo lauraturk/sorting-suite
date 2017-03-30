@@ -1,20 +1,16 @@
+export const bubbleSort = array => {
 
-const bubbleSort = array => {
+  var swapped;
 
-  for (let i = 0; i < array.length; i++) {
-    for (let j = 0; j < array.length - 1; j++) {
-
-      if (array[j] > array[j + 1]) {
-        let larger = array[j]
-        let smaller = array[j + 1]
-
-        array[j] = smaller
-        array[j + 1] = larger
+  do {
+    swapped = false;
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        [array[i], array[i + 1]] = [array[i + 1], array[i]]
+        swapped = true;
       }
     }
-  }
+  } while (swapped);
   return array
 
 }
-
-export default bubbleSort

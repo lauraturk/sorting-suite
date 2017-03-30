@@ -1,4 +1,4 @@
-const insertionSort = (array) => {
+export const insertionSort = (array) => {
   for (let key = 1; key < array.length; key++ ) {
     array = insert(array, key - 1, array[key] );
   }
@@ -12,5 +12,3 @@ const insert = (array, rightIndex, value) => {
   array[i + 1] = value;
   return array;
 };
-
-export default insertionSort
