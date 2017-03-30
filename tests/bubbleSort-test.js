@@ -29,14 +29,14 @@ describe('Bubble Sort', () => {
   });
 
   it('should sort a large random array of numbers', () => {
-    var testArray = generateRandomNumber(1, 100, 2000);
+    var testArray = generateRandomNumber(1, 100, 180000);
     var browserSorted = testArray.sort(compareNumbers);
 
     assert.deepEqual(bubbleSort(testArray), browserSorted)
   })
 
   it('should sort a large random of positive and Negative integers', () => {
-    var testArray2 = generateRandomNumber(-90, 100, 2000);
+    var testArray2 = generateRandomNumber(-90, 100, 25000);
     var browserSorted2 = testArray2.sort(compareNumbers);
 
     assert.deepEqual(bubbleSort(testArray2), browserSorted2);
