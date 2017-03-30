@@ -1,9 +1,9 @@
 export const generateRandomNumber = (min, max, num) => {
-  let testArray = []
-
-  let random =  Math.floor(Math.random() * (max - min) + min)
+  const testArray = []
 
   for (let i = 0; i < num; i++) {
+    const random =  Math.floor(Math.random() * (max - min) + min)
+
     testArray.push(random)
   }
   return testArray

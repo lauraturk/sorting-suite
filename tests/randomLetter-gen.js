@@ -1,7 +1,7 @@
-const alphabet = "abcdefghijklmnopqrstuvwxyz"
-const testLetterArray = []
-
 export const generateRandomLetter = numLetter => {
+
+  const alphabet = "abcdefghijklmnopqrstuvwxyz"
+  const testLetterArray = []
 
   for (let i = 0; i < numLetter; i++) {
     let randomLetter =
